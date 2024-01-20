@@ -1,0 +1,41 @@
+body{
+    margin-top: 5rem;
+}
+.navbar>*{
+    background-color: #e8e8e8;
+    font-size: 0.86rem;
+}
+.navbar {
+    padding: 0 ;
+}
+
+.navbar .container-fluid{
+    padding: 8px  10px ;
+}
+
+.navbar-toggler{
+    border: none;   
+}
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.dropdown-menu li>a{
+    color: black !important;
+}
+.nav-item a{
+    color: #2F3C7E !important;
+    font-weight: 500;
+}
+.search {
+    color: white;
+    background-color: #1a3c57;
+}
+.search:hover{
+    color: white;
+    background-color: #255b87;
+}
+.search:active{
+    background-color: white;
+}
+
