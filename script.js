@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navbtn = document.querySelector(".navbar-toggler");
     navbtn.addEventListener("click",()=>{
         navbtn.classList.add("rm-outline");
+        console.log("click");
     });
 });
 
@@ -11,8 +12,8 @@ let items = document.querySelectorAll('.slider .item');
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
     
-    let active = 3;
-    function loadShow(){
+    let active = 0;
+    async function loadShow(){
         let stt = 0;
         items[active].style.transform = `none`;
         items[active].style.zIndex = 1;
@@ -34,7 +35,21 @@ let items = document.querySelectorAll('.slider .item');
             items[i].style.opacity = stt > 2 ? 0 : 0.6;
         }
     }
+    function moveToNextSlide() {
+        if(active<=items.length){
+            active++;
+        }
+        else{
+            active=0;
+        }
+        loadShow();
+    }
+    
     loadShow();
+    
+    // Move to the next slide after a delay (1000 milliseconds)
+    setInterval(moveToNextSlide, 2000);
+
     next.onclick = function(){
         active = active + 1 < items.length ? active + 1 : active;
         loadShow();
